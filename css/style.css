@@ -1,0 +1,377 @@
+/* CSS Variables */
+:root {
+  --primary-color: #228B22;
+  --secondary-color: #E2FAE2;
+  --max-width: 1100px;
+}
+
+/* CSS Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Style */
+a {
+  color: var(--primary-color);
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px 20px;
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+a:hover {
+  color: #7ab436;
+}
+
+body {
+  color: #40514E;
+  font-family: 'Merriweather', serif;
+  margin: 0;
+  text-align: center;
+  overflow-x: hidden;
+  max-width: --max-width: 1100px;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-family: 'Sacramento', cursive;
+  font-size: 5.625rem;
+  margin: 50px auto 0;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: normal;
+  padding-bottom: 10px;
+}
+
+h3 {
+  color: var(--primary-color);
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 10px;
+}
+
+hr {
+    border: dotted var(--secondary-color) 6px;
+    border-bottom: none;
+    margin: 50px auto;
+    width: 4%;
+}
+
+p {
+  line-height: 2;
+}
+
+/* TOP SECTION */
+.top-container {
+  background: var(--secondary-color);
+  padding-top: 100px;
+  position: relative;
+  max-width: --max-width: 1100px;
+}
+
+.top-cloud {
+  position: absolute;
+  right: 300px;
+  top: 40px;
+}
+
+.bottom-cloud {
+  position: absolute;
+  bottom: 300px;
+  left: 250px;
+}
+
+.web {
+  text-decoration: underline;
+}
+
+.mountain-img {
+  margin: auto;
+}
+
+/* Middle Section */
+.middle-container {
+  margin: 50px 0;
+}
+
+.grass-img {
+  width: 15%;
+}
+
+.intro {
+  margin: auto;
+  width: 30%;
+}
+
+#skills-contact {
+  display: flex;
+  margin: 50px 0;
+}
+
+#skills-contact .my-skills,
+#skills-contact .contact-me {
+  flex: 1;
+  padding: 20px;
+}
+
+.btn {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 20px;
+  outline: none;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+.btn:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* BOTTOM SECTION */
+.bottom-container {
+  background: var(--secondary-color);
+  padding: 50px 0 20px;
+}
+
+.copyright {
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  padding: 20px 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  #skills-contact {
+    flex-direction: column;
+  }
+
+  .top-cloud {
+    width: 30%;
+    position: absolute;
+    right: 550px;
+    top: 70px;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  .bottom-cloud {
+    width: 30%;
+    bottom: 225px;
+    left: 550px;
+  }
+
+  .mountain-img {
+    width: 60%
+  }
+}
+
+@media (max-width: 430px) {
+  .top-cloud {
+    position: absolute;
+    right: 250px;
+    top: 50px;
+  }
+
+  .bottom-cloud {
+    bottom: 120px;
+    left: 250px;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .top-cloud {
+    position: absolute;
+    right: 200px;
+  }
+
+  .bottom-cloud {
+    bottom: 100px;
+    left: 200px;
+  }
+
+  a {
+    padding: 5px 10px;
+  }
+}
+
+/* Knowledge Resume Styles */
+/* Header Setion */
+#main-header {
+  background: var(--secondary-color);
+  padding: 2.5rem 0;
+}
+
+#main-header .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+#main-header .container h1 {
+  font-size: 3.5rem;
+  margin-top: 10px;
+}
+
+/* Timeline Section */
+#timeline ul {
+  padding: 50px 0;
+  text-align: left;
+}
+
+/* This is where we created the white line in the middle with the width of 6px*/
+#timeline ul li {
+  list-style: none;
+  /* Position it as relative since we will be positioning the element inside as absolute */
+  position: relative;
+  width: 6px;
+  margin: 0 auto;
+  padding-top: 50px;
+  background: #fff;
+  background: var(--secondary-color);
+}
+
+/* This is where we created our Boxes using our div */
+#timeline ul li div {
+  position: relative;
+  bottom: 0;
+  width: 400px;
+  padding: 1rem;
+  background: var(--secondary-color);
+  transition: all 0.5s ease-in-out;
+  /* We add this code after we add our JavaScript */
+  visibility: hidden;
+  opacity: 0;
+}
+
+#timeline ul li div p {
+  color: var(--primary-color);
+}
+
+/* Right Side Boxes */
+/* Make sure to add the :nth-child in li and make sure to target the div since that where the boxes are */
+#timeline ul li:nth-child(odd) div {
+  left: 40px;
+  /* We add this code after we add our JavaScript */
+  transform: translateX(200px);
+}
+
+/* Left Side Boxes */
+/* Make sure to add the :nth-child in li and make sure to target the div since that where the boxes are */
+#timeline ul li:nth-child(even) div {
+  left: -434px;
+  /* We add this code after we add our JavaScript */
+  transform: translateX(-200px);
+}
+
+/* This is where we created our Dots in our timeline using :after */
+#timeline ul li:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  /* Changed the background from var(--secondary-color) to inherit after we add the JavaScript */
+  background: inherit;
+  border-radius: 50%;
+  /* To move it in the center */
+  transform: translateX(-50%);
+  transition: background 0.5s ease-in-out;
+}
+
+/* This is where we created Arrows Base */
+#timeline div::before {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  border-style: solid;
+  /* It should be 0 for the width and height because the arrow will just comes witht the border width  */
+  width: 0;
+  height: 0;
+}
+
+/* Right Side Arrows */
+#timeline ul li:nth-child(odd) div::before {
+  left: -15px;
+  /* To make it look like an arrow we need to add a border width and border-color */
+  border-width: 8px 16px 8px 0;
+  border-color: transparent var(--secondary-color) transparent transparent;
+}
+
+/* Left Side Arrows */
+#timeline ul li:nth-child(even) div::before {
+  right: -15px;
+  /* To make it look like an arrow we need to add a border width and border-color */
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent var(--secondary-color);
+}
+
+/* We add this code after we add our JavaScript */
+/* Show Boxes */
+#timeline ul li.show div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* We add this code after we add our JavaScript */
+#timeline ul li.show:after {
+  background: var(--primary-color);
+}
+
+
+/* Media Queries For Knowledge Resume */
+@media (max-width: 900px) {
+  #timeline ul li div {
+    width: 250px;
+  }
+
+  #timeline ul li:nth-child(even) div {
+    left: -284px;
+  }
+}
+
+@media (max-width: 600px) {
+  #timeline ul li {
+    margin-left: 20px;
+  }
+
+  /* Width to be Dynamic */
+  #timeline ul li div {
+    /* CSS calc function | we are just taking the 90px away */
+    width: calc(100vw - 90px);
+  }
+
+  #timeline ul li:nth-child(even) div {
+    left: 40px;
+  }
+
+  /* Right Side Arrows */
+  #timeline ul li:nth-child(even) div::before {
+    left: -15px;
+    /* To make it look like an arrow we need to add a border width and border-color */
+    border-width: 8px 16px 8px 0;
+    border-color: transparent var(--secondary-color) transparent transparent;
+  }
+}
